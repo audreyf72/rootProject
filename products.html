@@ -1,0 +1,154 @@
+<html>
+
+<body>
+
+    <form action="/controllers/product" method="POST" name="pform">
+        <div>
+            Product Name
+            <input type="text" required name="product_name">
+            <div id="email_error"></div>
+            Product Desc
+            <input type="text" required name="product_desc">
+            <input type="submit" value="Add">
+            <input type="radio" name="preference" id="like" value="1" class="input-hidden" />
+            <input type="radio" name="preference" id="dislike" value="0" class="input-hidden" />
+
+            <p class="formTitle">Would you like to rate this product?</p>
+            <select class="select" id="rating" name="rating">
+                <option value="">Please Select</option>
+                <option value="1">1 Star (Not good)</option>
+                <option value="2">2 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="5">5 Stars (Excellent)</option>
+            </select>
+
+
+        </div>
+    </form>
+</body>
+
+</html>
+
+
+
+
+<!-- 
+
+<html>
+<head>
+<body>
+    <header>
+        <div class="headerImg">
+            <a href="index.html"><img id="logoImg" src="assets/images/header_logo-01.svg" alt="Vine Logo"></a>
+        </div>
+    </header>
+    <div class="container">
+        <div class="pageContent">
+            <div id="userForm">
+                <form action="/controllers/product" method="POST" name="pform">
+                    <div class="imgcontainer">
+                      <img src="assets/images/VineLogo_main.svg" width="200px" alt="Logo">
+                    </div>
+                  
+                    <div class="formContainer">
+                      <p class="formTitle">Product Name</p>
+                      <input type="text" id="name" class="form-control" placeholder="Enter Product Name" required="" name="product_name">
+ 
+                      <p class="formTitle">Product Description</p>
+                      <input type="text" id="description" class="form-control" placeholder="Enter Product Description" required="" name"product_desc">
+                     -->
+<!-- <p class="formTitle">Add to Likes or Dislikes?</p>
+                    
+                        <input type="radio" name="preference" id="like" value="true" class="input-hidden" />
+                        <label for="like">
+                            <img src="assets/images/like_green.svg" alt="Like"/>
+                        </label>
+
+                        <input type="radio" name="preference" id="dislike" value="false" class="input-hidden" />
+                        <label for="dislike">
+                            <img src="assets/images/dislike_red.svg" alt="Disike"/>
+                        </label>
+                    
+                    <p class="formTitle">Would you like to rate this product?</p>
+                    <select class="select" id="rating" name="rating">
+                        <option value="">Please Select</option>
+                        <option value="1">1 Star (Not good)</option>
+                        <option value="2">2 Stars</option>
+                        <option value="3">3 Stars</option>
+                        <option value="4">4 Stars</option>
+                        <option value="5">5 Stars (Excellent)</option>
+                    </select>
+                   -->
+<!-- <br>
+                    <button type="submit" id="submit">Add Product</button>
+                    </div>
+
+                </form>
+            </div>
+            
+        </div>
+
+</div> -->
+
+<!-- <footer>
+  <div class="footerImgs">
+    <div id="dislikeBtn">
+      <img src="assets/images/icons-01.svg" width="50px">
+      <br>View Dislikes</div>
+    <div id="cameraBtn">
+      <img src="assets/images/icons-02.svg" width="60%">
+    </div>
+    <div id="likeBtn">
+      <img src="assets/images/icons-03.svg" width="50px">
+      <br>View Likes</div>
+  </div>
+</footer> -->
+
+<!-- <script type="text/javascript">
+        // Capture the form inputs
+        $("#submit").on("click", function(event) {
+          event.preventDefault();
+      
+          // Form validation
+          function validateForm() {
+            var isValid = true;
+            $(".form-control").each(function() {
+              if ($(this).val() === "") {
+                isValid = false;
+              }
+            });
+      
+            $(".select").each(function() {
+      
+              if ($(this).val() === "") {
+                isValid = false;
+              }
+            });
+            return isValid;
+          }
+      
+          // If all required fields are filled
+          if (validateForm()) {
+            // Create an object for the user"s data
+            var userData = {
+              name: $("#name").val().trim(),
+              desription: $("#description").val().trim(),
+              preference: $("#like").val(),
+              preference: $("#dislike").val(),
+              rating: $("#rating").val()
+            };
+      
+            var currentURL = window.location.origin;
+      
+            // AJAX post the data to the product API.
+            $.post(currentURL + "/api/product", userData, function(data) {     
+            });
+          } else {
+            alert("Please complete all required forms");
+          }
+        });
+      </script> -->
+</body>
+
+</html>
