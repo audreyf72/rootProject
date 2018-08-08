@@ -3,7 +3,7 @@
 }
 
 hr {
-  width: 300px;
+  width: 350px;
 }
 
 body {
@@ -54,6 +54,12 @@ label {
   margin-bottom: 0px;
 }
 
+.bigger {
+  margin: 0px;
+  padding: 0px;
+  font-size: 14pt;
+}
+
 .spaceDiv {
   width: 100%;
   margin: 10px 0px 0px 0px;
@@ -67,17 +73,18 @@ label {
 .pageTitle {
   font-size: 24pt;
   color: #1d8649;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans Condensed', sans-serif;
   font-weight: bold;
   text-transform: uppercase; 
   margin: 0px 0px 0px 0px;
+  letter-spacing: 0px;
 }
 
 header {
   position: fixed;
   background-image: url(../assets/images/header_root_art-01.png);
   background-repeat: repeat-x;
-  background-size: auto 115px;
+  background-size: auto 113px;
   z-index: 2;
   height: 115px;
   top: 0;
@@ -121,17 +128,17 @@ header {
 
 #mainLogo {
   width: 275px;
-  margin: 40px auto 40px auto;
+  margin: 25px auto 25px auto;
 }
 
 .container {
   display: flex;
   justify-content: center;
-  margin: 120px auto 130px auto;
+  margin: 100px auto 130px auto;
 }
 
 .pageContent {
-  padding: 30px 10px 30px 10px;
+  padding: 20px;
   margin-left: auto;
   margin-right: auto;
   max-width: 550px;
@@ -143,15 +150,15 @@ header {
 
 .pageContent a {
   color: #1d8649;
-  font-size: 16pt;
+  font-size: 20pt;
   text-decoration: none;
   padding: 0px 1px 3px 1px;
   font-weight: bold;
 }
 
 .pageContent a:hover {
-  color: #b8b8b8;
-  border-bottom: 1px solid #b8b8b8;
+  color: #1d8649;
+  text-shadow: 0 0 6px #00b34b;
 }
 
 .pageLinks a {
@@ -166,7 +173,7 @@ header {
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
 .form-group2 {
@@ -176,7 +183,7 @@ header {
 .formdiv {
   float: left;
   width: 50%;
-  margin-top: 20px;
+  margin-top: 5px;
   margin-bottom: 20px;
 }
 
@@ -188,7 +195,7 @@ header {
 .selectPref {
   font-size: 16px;
   padding: 10px;
-  width: 200px;
+  width: 150px;
   text-align: center;
 }
 
@@ -243,6 +250,7 @@ textarea {
 .btn:hover {
   cursor: pointer;
   background-color: #165e34;
+  box-shadow: 0 0 6px #00b34b;
 }
 
 .modal-title {
@@ -355,7 +363,7 @@ footer {
   background-image: url(../assets/images/footer_root_art-01.png);
   background-repeat: repeat-x;
   background-position: bottom;
-  background-size: auto 130px;
+  background-size: auto 125px;
 }
 
 /* Styling Product Divs */
