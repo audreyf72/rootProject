@@ -57,24 +57,28 @@ $(document).ready(function() {
   }
 
   // InitializeRows handles appending all of our constructed product HTML on liked.html NEED TO FIX
-  function likedRows() {
+  function likedRows(like, products) {
     likedContainer.empty();
     var productsToAdd = [];
     for (var i = 0; i < products.length; i++) {
-      productsToAdd.push(createNewRow(products[i]));
+      if (products[i].preference.val === like) {
+        productsToAdd.push(createNewRow(products[i]));
     }
     likedContainer.prepend(productsToAdd);
   }
+}
 
   // InitializeRows handles appending all of our constructed product HTML on disliked.html NEED TO FIX
-  function dislikedRows() {
+  function dislikedRows(dislike, products) {
     dislikedContainer.empty();
     var productsToAdd = [];
     for (var i = 0; i < products.length; i++) {
-      productsToAdd.push(createNewRow(products[i]));
+      if (products[i].preference.val === dislike) {
+        productsToAdd.push(createNewRow(products[i]));
     }
     dislikedContainer.prepend(productsToAdd);
   }
+}
 
 // This function constructs a products HTML
   function createNewRow(product) {
