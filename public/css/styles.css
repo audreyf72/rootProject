@@ -18,7 +18,7 @@ body {
 h1 {
   font-size: 24pt;
   color: #1d8649;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   text-transform: uppercase; 
   margin: 0px 0px 5px 0px;
 }
@@ -71,8 +71,7 @@ label {
 .pageTitle {
   font-size: 24pt;
   color: #1d8649;
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-weight: bold;
+  font-family: 'Roboto Condensed', sans-serif;
   text-transform: uppercase; 
   margin: 0px 0px 0px 0px;
 }
@@ -148,6 +147,7 @@ header {
 .pageContent a {
   color: #1d8649;
   font-size: 20pt;
+  font-family: 'Roboto Condensed', sans-serif;
   text-decoration: none;
   padding: 0px;
   font-weight: bold;
