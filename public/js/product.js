@@ -221,6 +221,8 @@ $(document).ready(function () {
       partial = " for User #" + id;
     }
     productContainer.empty();
+    likedContainer.empty();
+    dislikedContainer.empty();
     var messageH2 = $("<h2>");
     messageH2.css({ "text-align": "center", "margin-top": "50px" });
     messageH2.html("No products have been added yet" + partial + ".<br>" + "Click <a href='/addproduct" + query +
