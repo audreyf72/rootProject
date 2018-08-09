@@ -28,14 +28,14 @@
 				<form id="newProduct">
 					<div class="form-group">
 						<label for="name"><p class="formTitle">Product Name:</p></label>
-						<input placeholder="Add product name here" type="text" class="form-control" id="name">
+						<input placeholder="Add product name here" type="text" class="form-control" id="name" required>
 						
 						<label for="description"><p class="formTitle">Product Description:</p></label>
-						<textarea placeholder="Please add a brief product description" class="form-control" rows="2" id="description"></textarea>
+						<textarea placeholder="Please add a brief product description" class="form-control" rows="2" id="description" required></textarea>
 
 						<div class ="formdivWide">
 							<p class="formTitle">Like or dislike?</p>
-								<select class="selectPref" id="preference" name="preference">
+								<select class="selectPref" id="preference" name="preference" required>
 									<option value="liked" selected>Like</option>
 									<option value="disliked">Dislike</option>
 								</select>
@@ -45,7 +45,7 @@
 							<div class ="formdiv">
 								<label for="category"><p class="formTitle2">Select User:</p></label>
 								<br>
-								<select class="select" id="user">
+								<select class="select" id="user" required>
 								</select>
 							</div>
 
@@ -63,7 +63,7 @@
 						</div>
 
 						<br>
-								<!--<p class="formTitle">Add to Likes or Dislikes?</p>
+								<p class="formTitle">Add to Likes or Dislikes?</p>
 								<div class="spaceDiv2">
 								<input type="radio" name="preference" id="like" value="1" class="preference input-hidden" />
 								<label for="like">
@@ -74,7 +74,7 @@
 								<label for="dislike">
 									<img src="assets/images/dislike_red.svg" alt="Disike" />
 								</label>
-								</div>-->
+								</div>
 						<div class ="formdivWide">
 							<button type="submit" class="btn">Submit</button>
 						</div>
