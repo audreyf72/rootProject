@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   /* global moment */
 
   // productContainer holds all of our products
@@ -25,6 +25,31 @@ $(document).ready(function() {
     getProducts();
   }
 
+  // The code below handles the case where we want to get product posts for a specific user
+  // Looks for a query param in the url for user_id
+  var url = window.location.search;
+  var userId;
+  if (url.indexOf("?user_id=") !== -1) {
+    userId = url.split("=")[1];
+    likedProducts(userId);
+  }
+  // If there's no userId we just get all products as usual
+  else {
+    likedProducts();
+  }
+
+  // The code below handles the case where we want to get product posts for a specific user
+  // Looks for a query param in the url for user_id
+  var url = window.location.search;
+  var userId;
+  if (url.indexOf("?user_id=") !== -1) {
+    userId = url.split("=")[1];
+    dislikedProducts(userId);
+  }
+  // If there's no userId we just get all products as usual
+  else {
+    dislikedProducts();
+  }
 
   // This function grabs products from the database and updates the page
   function getProducts(user) {
@@ -32,7 +57,7 @@ $(document).ready(function() {
     if (userId) {
       userId = "/?user_id=" + userId;
     }
-    $.get("/api/products" + userId, function(data) {
+    $.get("/api/products" + userId, function (data) {
       console.log("Products", data);
       products = data;
       if (!products || !products.length) {
@@ -40,13 +65,47 @@ $(document).ready(function() {
       }
       else {
         initializeRows();
-        likedRows();
-        dislikedRows();
       }
     });
   }
 
-// InitializeRows handles appending all of our constructed product HTML inside productContainer
+  // This function grabs products from the database and updates the liked page
+  function likedProducts(user) {
+    userId = user || "";
+    if (userId) {
+      userId = "/?user_id=" + userId;
+    }
+    $.get("/api/products/liked" + userId, function (data) {
+      console.log("Products", data);
+      products = data;
+      if (!products || !products.length) {
+        displayEmpty(user);
+      }
+      else {
+        likedRows(products);
+      }
+    });
+  }
+
+  // This function grabs products from the database and updates the liked page
+  function dislikedProducts(user) {
+    userId = user || "";
+    if (userId) {
+      userId = "/?user_id=" + userId;
+    }
+    $.get("/api/products/disliked" + userId, function (data) {
+      console.log("Products", data);
+      products = data;
+      if (!products || !products.length) {
+        displayEmpty(user);
+      }
+      else {
+        dislikedRows(products);
+      }
+    });
+  }
+
+  // InitializeRows handles appending all of our constructed product HTML inside productContainer
   function initializeRows() {
     productContainer.empty();
     var productsToAdd = [];
@@ -57,30 +116,31 @@ $(document).ready(function() {
   }
 
   // InitializeRows handles appending all of our constructed product HTML on liked.html NEED TO FIX
-  function likedRows(like, products) {
+  function likedRows(products) {
+    console.log(products);
     likedContainer.empty();
     var productsToAdd = [];
     for (var i = 0; i < products.length; i++) {
-      if (products[i].preference.val === like) {
+      if (products[i].preference === 'liked') {
         productsToAdd.push(createNewRow(products[i]));
+      }
     }
     likedContainer.prepend(productsToAdd);
   }
-}
 
   // InitializeRows handles appending all of our constructed product HTML on disliked.html NEED TO FIX
-  function dislikedRows(dislike, products) {
+  function dislikedRows(products) {
     dislikedContainer.empty();
     var productsToAdd = [];
     for (var i = 0; i < products.length; i++) {
-      if (products[i].preference.val === dislike) {
+      if (products[i].preference === "disliked") {
         productsToAdd.push(createNewRow(products[i]));
+      }
     }
     dislikedContainer.prepend(productsToAdd);
   }
-}
 
-// This function constructs a products HTML
+  // This function constructs a products HTML
   function createNewRow(product) {
     var formattedDate = new Date(product.createdAt);
     formattedDate = moment(formattedDate).format("M/D/YYYY");
@@ -108,7 +168,7 @@ $(document).ready(function() {
     newProductPref.html("<b>Preference: </b>" + product.preference);
     newProductRating.html("<b>Rating: </b>" + product.rating + " stars");
     newProductDate.html("<b>Date added: </b>" + formattedDate);
-    
+
     newProductPanelHeading.append(newProductName);
     newProductPanelBody1.append(newProductDate);
     newProductPanelHeading.append(newProductDesc);
@@ -116,7 +176,7 @@ $(document).ready(function() {
     newProductPanelBody1.append(newProductRating);
     newProductPanelBody3.append(deleteBtn);
     newProductPanelBody3.append(editBtn);
-    
+
     newProductPanel.append(newProductPanelHeading);
     newProductPanel.append(newProductPanelBody1);
     newProductPanel.append(newProductPanelBody3);
@@ -130,7 +190,7 @@ $(document).ready(function() {
       method: "DELETE",
       url: "/api/products/" + id
     })
-      .then(function() {
+      .then(function () {
         getProducts(productCategorySelect.val());
       });
   }
@@ -164,7 +224,7 @@ $(document).ready(function() {
     var messageH2 = $("<h2>");
     messageH2.css({ "text-align": "center", "margin-top": "50px" });
     messageH2.html("No products have been added yet" + partial + ".<br>" + "Click <a href='/addproduct" + query +
-    "'>here</a> to add a product.");
+      "'>here</a> to add a product.");
     productContainer.append(messageH2);
     likedContainer.append(messageH2);
     dislikedContainer.append(messageH2);

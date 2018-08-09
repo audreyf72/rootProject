@@ -33,7 +33,7 @@ module.exports = function(app) {
   });
 
   // disliked route loads liked.html 
-  app.get("/liked", function(req, res) {
+  app.get("/disliked", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/disliked.html"));
   });
 
