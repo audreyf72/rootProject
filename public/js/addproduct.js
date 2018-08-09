@@ -62,10 +62,11 @@ $(document).ready(function() {
     }
   }
 
-  // Submits a new product and brings user to allproducts page upon completion
+  // Submits a new product and alerts user of product added with modal
   function submitProduct(product) {
     $.post("/api/products", product, function() {
-      window.location.href = "/allproducts";
+      $("#productaddedModal").modal();
+      //window.location.href = "/allproducts";
     });
   }
 
@@ -91,7 +92,7 @@ $(document).ready(function() {
         prefInput.val(data.preference);
         ratingInput.val(data.rating);
         userId = data.UserId || data.id;
-        // If we have a post with this id, set a flag for us to know to update the post
+        // If we have a product with this id, set a flag for us to know to update the post
         // when we hit submit
         updating = true;
       }

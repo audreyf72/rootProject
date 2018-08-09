@@ -37,8 +37,8 @@ $(document).ready(function() {
   // Function for creating the user then redirects to add product page
   function addUser(userData) {
     $.post("/api/users", userData)
+    $("#profileaddedModal").modal();
     window.location.href = "/addproduct";
-    alert("Hello " + userData.name + "! Please add a new product.");
   }
 
   // Function for creating a new list row for userss

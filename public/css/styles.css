@@ -251,15 +251,24 @@ textarea {
   box-shadow: 0 0 6px #00b34b;
 }
 
-.modal-title {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: bold;
-  margin-left: auto;
-  margin-right: auto;
+/* MOdal Styling */
+
+.modal-header {
+  align-items: center;
+  text-align: center;
+  display: unset;
+  padding: 20px 5px 5px 5px;
 }
 
 .modal-body {
   text-align: center;
+  font-size: 16pt;
+}
+
+.modal-footer {
+  text-align: center;
+  justify-content: center;
+  padding: 20px 5px 20px 5px;
 }
 
 .close {
@@ -267,6 +276,23 @@ textarea {
   position: absolute;
   top: 10px;
   right: 15px;
+}
+
+.mbtn {
+  background-color: #1d8649;
+  width: 30%;
+  padding: 5px 10px 5px 10px;
+  border: 1px solid #186337;
+  border-radius: 5px;
+  font-size: 12pt;
+  color: white;
+  margin: 0px 10px 15px 10px;
+}
+
+.mbtn:hover {
+  cursor: pointer;
+  background-color: #165e34;
+  box-shadow: 0 0 6px #00b34b;
 }
 
 /* For Like/Dislike Buttons */
