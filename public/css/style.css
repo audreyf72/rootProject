@@ -133,6 +133,11 @@
     width: 275px;
     margin: 15px auto 15px auto;
   }
+
+  #pageLogo {
+    width: 175px;
+    margin: 10px auto 10px auto;
+  }
   
   .container {
     display: flex;
