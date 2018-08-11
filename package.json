@@ -1,5 +1,5 @@
 {
-  "name": "post-author-joins",
+  "name": "project2",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -12,10 +12,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.15.2",
+    "body-parser": "^1.18.3",
     "dotenv": "^6.0.0",
-    "express": "^4.14.0",
+    "express": "^4.16.3",
     "mysql2": "^1.6.1",
-    "sequelize": "^4.3.1"
+    "sequelize": "^4.38.0"
   }
 }
