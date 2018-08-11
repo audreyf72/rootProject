@@ -1,0 +1,72 @@
+<header>
+    <div class="headerImg">
+        <a href="/">
+            <div id="headerLeft"></div>
+        </a>
+        <div id="headerMiddle"></div>
+        <div id="headerRight"></div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="pageContent">
+        <div id="pageLogo">
+            <img src="assets/images/ROOTLogo_main.svg" width="175px" alt="ROOT Logo">
+        </div>
+        <div class="pageTitle">ADD A PRODUCT</div>
+        <form id="newProduct">
+            <div class="form-group">
+                <label for="name">
+                    <div class="formTitle">Product Name:</div>
+                </label>
+                <input placeholder="Add product name here" type="text" class="form-control" id="name" required>
+
+                <label for="description">
+                    <div class="formTitle">Product Description:</div>
+                </label>
+                <textarea placeholder="Add product description here" class="form-control" rows="2" id="description"></textarea>
+
+                <div class="formdiv">
+                    <div class="formTitle">Like or dislike?</div>
+                    <select class="select" id="preference" name="preference">
+                        <option value="liked" selected>Like</option>
+                        <option value="disliked">Dislike</option>
+                    </select>
+                </div>
+                <div class="formdiv">
+                    <div class="formTitle">Product Rating</div>
+                    <select class="select" id="rating" name="rating">
+                        <option value="" selected>Please Select</option>
+                        <option value="1">1 Star (Not good)</option>
+                        <option value="2">2 Stars</option>
+                        <option value="3">3 Stars</option>
+                        <option value="4">4 Stars</option>
+                        <option value="5">5 Stars (Excellent)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="formdivWide">
+                <button type="submit" class="btn">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+<footer>
+    <div class="footerImgs">
+        <div id="dislikeBtn">
+            <a href="/disliked">
+                <img src="assets/images/icons-01.svg" width="50px">
+            </a>
+            <br>View Dislikes</div>
+        <div id="cameraBtn">
+            <a href="/addproduct">
+                <img src="assets/images/addIcon.svg" width="60%">
+            </a>
+        </div>
+        <div id="likeBtn">
+            <a href="/liked">
+                <img src="assets/images/icons-03.svg" width="50px">
+            </a>
+            <br>View Likes</div>
+    </div>
+</footer>

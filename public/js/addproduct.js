@@ -56,10 +56,10 @@ $(document).ready(function() {
     }
   });
 
-  // Submits a new post and brings user to blog page upon completion
+  // Submits a new post and brings user to confirmation page upon completion
   function submitProduct(Product) {
     $.post("/api/products/", Product, function() {
-      window.location.href = "/allproducts";
+      window.location.href = "/confirm";
     });
   }
 
@@ -87,7 +87,7 @@ $(document).ready(function() {
       data: product
     })
       .then(function() {
-        window.location.href = "/allproducts";
+        window.location.href = "/update";
       });
   }
 });

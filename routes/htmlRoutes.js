@@ -35,4 +35,11 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/createprofile.html"));
   });
 
+  app.get("/confirm", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/confirm.html"));
+  });
+  app.get("/update", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/update.html"));
+  });
+
 };
